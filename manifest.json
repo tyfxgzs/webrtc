@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "My extension library",
+  "version": "1.0",
+  "description": "Welcome to my extension library",
+  "permissions": ["tabs", "activeTab", "storage", "alarms", "privacy"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "run_at": "document_start",
+    "all_frames": true
+  }]
+}
